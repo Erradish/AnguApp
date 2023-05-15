@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<div>
+    <form [formGroup]="form" (submit)="submit()">
+        <div class="title">
+            <h2>AnguApp</h2>
+        </div>
+        <div>
+            <label for="mail">Mail</label>
+            <mat-form-field class="input">
+                <input matInput type="email" placeholder="Inserisci la tua mail" 
+                    formControlName="mail" >
+            </mat-form-field>
+            <label for="password">Password</label>
+            <mat-form-field class="input">
+                <input matInput type="password" placeholder="Inserisci la tua password" 
+                    formControlName="password" >
+            </mat-form-field>
+            <button type="submit" class="btn btn-primary" >Login</button>
+            <div>
+                <div *ngIf="credenziali">
+                    <span class="text-danger">
+                        UserName e Password errati
+                    </span>
+                </div>
+                <div *ngIf="erroreGenerico">
+                    <span class="text-danger">
+                        Qualcosa è andato storto
+                    </span>
+                </div>
+            </div>
+            <div class="footer">
+                <h4>Non sei ancora registrato? </h4>
+                <h4 [routerLink]="['/register']" class="reg"> Registrati qui</h4>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- <app-footer></app-footer> -->

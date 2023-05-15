@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<div>
+    <form [formGroup]="form" (submit)="submit()">
+        <div class="title">
+            <h2>AnguApp</h2>
+        </div>
+        <div>
+            <label for="username">Username</label>
+            <mat-form-field class="input">
+                <input matInput type="text" placeholder="inserisci il tuo username" 
+                    formControlName="username">
+            </mat-form-field >
+            <label for="mail">Mail</label>
+            <mat-form-field class="input">
+                <input matInput type="email" placeholder="inserisci la tua mail" 
+                    formControlName="mail">
+            </mat-form-field>
+            <label for="password">Password</label>
+            <mat-form-field class="input">
+                <input matInput type="password" placeholder="inserisci la tua password" 
+                    formControlName="password">
+            </mat-form-field>
+            <label for="cellulare">Numero di Telefono</label>
+            <mat-form-field class="input">
+                <input matInput type="number" placeholder="inserisci il tuo numero di telefono" 
+                    formControlName="cellulare">
+            </mat-form-field>
+            <button type="submit" class="btn btn-primary" >Login</button>
+        </div>
+        <div class="footer">
+            <h4>Sei già registrato? </h4>
+            <h4 [routerLink]="['/login']" class="reg"> Loggati qui</h4>
+        </div>  
+    </form>
+</div>
